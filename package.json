@@ -1,0 +1,1 @@
+{"name":"com.inzone.mx","version":"1.7.0","displayName":"Inzone","cordova":{"platforms":["android","ios"]},"dependencies":{"cordova-android":"6.2.3","cordova-ios":"4.4.0"}}
