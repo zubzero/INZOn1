@@ -32,11 +32,11 @@
     <allow-intent href="geo:*" />
     <splash src="www/res/screen/android/screen-ldpi-portrait.png" />
     <allow-intent href="market:*" />
-    <icon src="www/res/icon/android/inzone-app-72PX.png" />
-    <icon density="ldpi" src="www/res/icon/android/inzone-app-36PX.png" />
-    <icon density="mdpi" src="www/res/icon/android/inzone-app-48PX.png" />
-    <icon density="hdpi" src="www/res/icon/android/inzone-app-72PX.png" />
-    <icon density="xhdpi" src="www/res/icon/android/inzone-app-96PX.png" />
+    <icon src="www/res/icon/android/inzone-app-72.png" />
+    <icon density="ldpi" src="www/res/icon/android/inzone-app-36.png" />
+    <icon density="mdpi" src="www/res/icon/android/inzone-app-48.png" />
+    <icon density="hdpi" src="www/res/icon/android/inzone-app-72.png" />
+    <icon density="xhdpi" src="www/res/icon/android/inzone-app-96.png" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="Orientation" value="portrait" />
     <preference name="loadUrlTimeoutValue" value="700000" />

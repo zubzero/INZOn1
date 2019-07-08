@@ -124,10 +124,10 @@ h1 {
 .fa-google-plus-square{color: #cc0e0e;}
 .fa-whatsapp{color: #05b703;}
 .botonesHome{
-  height: 130px;
+  height: 430px;
 }
 .portada .page__content{
-  background: url('../img/fondo.jpg') center center no-repeat !important;
+  background: url('../img/fondo.jpg') center bottom no-repeat !important;
   position: relative !important;
   top: 0;
   background-size: cover;
@@ -148,7 +148,7 @@ h1 {
   text-align: center;
   min-height: 300px;
 }
-.homeUno ons-button{width: 24%; float: left; border-radius: 0 !important; padding: 0 !important;border: none;}
+.homeUno ons-button{width: 50%; float: left; border-radius: 0 !important; padding: 0 !important;border: none;}
 .imagenHome{background: url(../img/imgmapa.png) center top no-repeat; width: 100%; height: 155px; background-size: contain;}
 .mapaHome{background: url(../img/panoramica.gif) center top no-repeat; width: 100%; height: 91px; background-size: contain;}
 .homeUno ons-button:last-child::after{background:none; width: 0; height: 0;position: relative;}
@@ -746,6 +746,7 @@ input[type=submit],#quickstart-password-reset, #quickstart-sign-in, #quickstart-
   font-weight: bold;
   color: #3C3C3C;
   font-size: 23px;
+  margin: 35px 0;
 }
 .tab-bar{
   background-color: #f8550b;
