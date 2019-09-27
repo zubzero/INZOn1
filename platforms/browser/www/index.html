@@ -310,13 +310,14 @@
               
             </div>
           <div class="footer">
-            <div class="botones">
-              <ons-button class="boton_ruleta" onclick="window.location.href='registro/login.html'"><img ng-src="img/acceder.png" alt=""><br> </ons-button>
-              <ons-button class="boton_ruleta" onclick="window.location.href='ruleta.html'"><img ng-src="img/ruleta.png" alt=""><br> </ons-button>
-              <ons-button class="boton_ruleta" onclick="menu.setMainPage('cupones.html', {closeMenu: true})"><img ng-src="img/cupones.png" alt=""><br> </ons-button>
-              <ons-button class="boton_ruleta" onclick="exitFromApp();"><img ng-src="img/salir.png" alt=""><br></ons-button>
-            </div>
             <a ng-repeat="banner in banner.bannerportada" ng-if="banner.estado == '1'" target="_blank" ng-href="{{banner.url}}" class="bannerImagen" style="background: url('http://inzone.com.mx/assets/images/imgclientes/{{banner.imagen}}') no-repeat;"></a>
+            <div class="botones">
+              <ons-button class="boton_ruleta" onclick="window.location.href='registro/login.html'"><img src="img/acceder.png" alt=""><br> ACCEDER</ons-button>
+              <ons-button class="boton_ruleta" onclick="window.location.href='ruleta.html'"><img src="img/ruleta.png" alt=""><br> RULETA</ons-button>
+              <ons-button class="boton_ruleta" onclick="menu.setMainPage('cupones.html', {closeMenu: true})"><img src="img/cupones.png" alt=""><br> MIS CUPONES</ons-button>
+              <ons-button class="boton_ruleta" onclick="exitFromApp();"><img src="img/salir.png" alt=""><br> SALIR</ons-button>
+            </div>
+            
             <div class="copy"><p>INZONE &copy; 2019 | Versión: {{version}}</p></div>
           </div>
           </ons-page>
