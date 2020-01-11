@@ -18,10 +18,16 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.inzone.mx"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.inzone.mx"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.inzone.mx"
+        },
+        "es6-promise-plugin": {
             "PACKAGE_NAME": "com.inzone.mx"
         }
     }

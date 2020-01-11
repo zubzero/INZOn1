@@ -648,7 +648,8 @@ input[type=submit],#quickstart-password-reset, #quickstart-sign-in, #quickstart-
   color: #c1c1c1;
 }
 .head_onsen span{font-weight: bold; font-size: 17px; color: white; text-transform: uppercase;}
-.cupon_page .page__background{background: #6b6b6b}
+.cupon_page .page__background{background: rgb(37,37,37);
+background: linear-gradient(180deg, rgba(37,37,37,1) 29%, rgba(66,66,66,1) 100%);}
 /*  GRID OF TWO  */
 .cupon_page .span_2_of_2 {
   width: 100%;
