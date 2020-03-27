@@ -124,7 +124,7 @@ h1 {
 .fa-google-plus-square{color: #cc0e0e;}
 .fa-whatsapp{color: #05b703;}
 .botonesHome{
-  height: 390px;
+  height: 350px;
 }
 .portada .page__content{
   background: url('../img/fondo.jpg') center top no-repeat !important;
@@ -747,7 +747,7 @@ background: linear-gradient(180deg, rgba(37,37,37,1) 29%, rgba(66,66,66,1) 100%)
   font-weight: bold;
   color: #3C3C3C;
   font-size: 23px;
-  margin: 35px 0;
+  margin: 20px 0;
 }
 .tab-bar{
   background-color: #f8550b;
