@@ -90,13 +90,13 @@
       
     });
     app.controller("homeCtl", function($scope, position, $http){
-      $scope.version = "1.7.8";
-      $http.get('http://inzone.com.mx/api.php/bannerportada?order=orden,asc', {cache: true}).success(function (data, status, headers, config) {
+      $scope.version = "1.7.9";
+      $http.get('https://inzone.com.mx/api.php/bannerportada?order=orden,asc', {cache: true}).success(function (data, status, headers, config) {
       $scope.banner = php_crud_api_transform(data);
       }).error(function (data, status, headers, config) {});
       if (localStorage.PerfilEmail){
       $scope.emailp = localStorage.PerfilEmail;
-      $http.get('http://inzone.com.mx/api.php/usuarios?filter=email,eq,'+$scope.emailp, {cache: true}).success(function (data, status, headers, config) {
+      $http.get('https://inzone.com.mx/api.php/usuarios?filter=email,eq,'+$scope.emailp, {cache: true}).success(function (data, status, headers, config) {
       $scope.datosusuario = php_crud_api_transform(data);
       }).error(function (data, status, headers, config) {});
     };
@@ -142,14 +142,14 @@
     };
 });
     app.controller("CategoriaCtl", function($scope, $http, position) {
-      var url = 'http://inzone.com.mx/api.php/clientes_categorias';
+      var url = 'https://inzone.com.mx/api.php/clientes_categorias';
       $http.get(url, {cache: true}).success(function(response) {
         $scope.clientes_categorias = php_crud_api_transform(response);
           console.log($scope.clientes_categorias);
       });
     });
         app.controller("PostsCtrl", function($scope, $http, position) {
-          $http.get('http://inzone.com.mx/api.php/clientes_categorias?order=nombre,asc', {cache: true}).success(function (data, status, headers, config) {
+          $http.get('https://inzone.com.mx/api.php/clientes_categorias?order=nombre,asc', {cache: true}).success(function (data, status, headers, config) {
             $scope.posts = php_crud_api_transform(data);
             // console.log($scope.posts)
           }).error(function (data, status, headers, config) {
@@ -160,13 +160,13 @@
           };
         });
     app.controller("PorCategoriaCtl", function($scope, $rootScope, position, $http) {
-      $http.get('http://inzone.com.mx/api.php/clientes?filter[]=id_categoria,eq,'+idnew+'&transform=1', {cache: true}).success(function(data, status, headers, config) {
+      $http.get('https://inzone.com.mx/api.php/clientes?filter[]=id_categoria,eq,'+idnew+'&transform=1', {cache: true}).success(function(data, status, headers, config) {
         $scope.sucursalinfo = data;   //Trae toda la información de los clientes
         $scope.distanciaPC = function(itema) {
             return getDistanceFromLatLonInKm(position.latitude,position.longitude,itema.Latitud,itema.Longitud);
         };
       }).error(function(data, status, headers, config) {}); //Sacar la imagen de la categoria
-      $http.get('http://inzone.com.mx/api.php/clientes_categorias/'+idnew, {cache: true}).success(function(data, status, headers, config) {
+      $http.get('https://inzone.com.mx/api.php/clientes_categorias/'+idnew, {cache: true}).success(function(data, status, headers, config) {
         $scope.imagencategorias = data;
       }).error(function(data, status, headers, config) { });
       $scope.tomarelemento = function (elemento) {
@@ -175,11 +175,11 @@
     });
     app.controller("CuponesCtl", function($scope, position, $http, $rootScope){
       $scope.usuario = localStorage.EmailUsuario;
-      $http.get('http://inzone.com.mx/api.php/cupon_usuario?transform=1&filter=usuario,eq,'+$scope.usuario, {cache: true}).
+      $http.get('https://inzone.com.mx/api.php/cupon_usuario?transform=1&filter=usuario,eq,'+$scope.usuario, {cache: true}).
       success(function(data, status, headers, config) {
         $scope.pagcupon = data;
       }).error(function(data, status, headers, config) {});
-      $http.get('http://inzone.com.mx/api.php/cupones?transform=1', {cache: false}).
+      $http.get('https://inzone.com.mx/api.php/cupones?transform=1', {cache: false}).
       success(function(data, status, headers, config) {
         $scope.bdcupon = data;       
       }).error(function(data, status, headers, config) {});
@@ -209,13 +209,13 @@
           document.getElementById('cuponID-'+idcup).style.display = 'none';
           $.ajax({
               method: "DELETE",
-              url: "http://inzone.com.mx/api.php/cupon_usuario/"+idcup
+              url: "https://inzone.com.mx/api.php/cupon_usuario/"+idcup
           }).done(function( msg ) {
             swal("Cupón usado");
           });
         };
     app.controller("DetalleCtl", function($scope, position, $http, $rootScope) {
-      $http.get('http://inzone.com.mx/api.php/clientes/'+idnew, {cache: true}).
+      $http.get('https://inzone.com.mx/api.php/clientes/'+idnew, {cache: true}).
       success(function(data, status, headers, config) {
         $scope.sucursalinfo = data;
         $rootScope.latitude = $scope.sucursalinfo.Latitud;
@@ -232,7 +232,7 @@
       
     });
     app.controller("PorlogoCtl", function($scope, $http, position, $rootScope) {
-      $http.get('http://inzone.com.mx/api.php/clientes?transform=1', {cache: true}).
+      $http.get('https://inzone.com.mx/api.php/clientes?transform=1', {cache: true}).
       success(function(data, status, headers, config) {
         // $scope.query = {};
         // $scope.queryBy = '$';
@@ -260,7 +260,7 @@
     
     app.controller("ListaCtl", function($scope, $timeout, position) {
       $(function() {
-          $.getJSON("http://inzone.com.mx/api.php/clientes?transform=1", function (data) {
+          $.getJSON("https://inzone.com.mx/api.php/clientes?transform=1", function (data) {
               $("#cercademi").append(
                   $.map(data.clientes, function(f) {
                       f.distance = getDistanceFromLatLonInKm(position.latitude,
@@ -272,7 +272,7 @@
                     if (f.estado = 1 && f.id_categoria) {
                       // var tel1 = f.telefono;
                       // var tel = tel1.slice(0, 4) + '-' + tel1.slice(3,7);
-                      return "<li class='timeline-li' style='background:url(http://inzone.com.mx/assets/images/imgclientes/fondo/" + f.img_movil + ");'><a onclick='idnew="+f.id+"; menu.setMainPage(\"detalle.html\")'>" + "<div ng-if='" + f.img_logo + "'><img src='http://inzone.com.mx/assets/images/imgclientes/"+f.img_logo+"' class='timeline-image'></div><div class='timeline-date distancia'>" + f.distance + " Km</div>" + 
+                      return "<li class='timeline-li' style='background:url(https://inzone.com.mx/assets/images/imgclientes/fondo/" + f.img_movil + ");'><a onclick='idnew="+f.id+"; menu.setMainPage(\"detalle.html\")'>" + "<div ng-if='" + f.img_logo + "'><img src='https://inzone.com.mx/assets/images/imgclientes/"+f.img_logo+"' class='timeline-image'></div><div class='timeline-date distancia'>" + f.distance + " Km</div>" + 
                                           "<div class='timeline-message'><p>Tel: "+ f.telefono +"</p></div><div class='timeline-from'><p class='timeline-name'>" + f.direccion + "</p><span class='timeline-id'>"+ f.Descripcion_Corta +"</span></div></a></li>";                
                     };
                   })
@@ -307,10 +307,10 @@
              <!--  <ons-button class="borde_home" modifier="outline" onclick="menu.setMainPage('por_nombre.html', {closeMenu: true})"><img ng-src="img/nombre.png" alt=""></ons-button>
               <ons-button class="borde_home" modifier="outline" onclick="menu.setMainPage('por_logo.html', {closeMenu: true})"><img ng-src="img/porlogo.png" alt=""></ons-button>   -->           
               </div>
-              
+              <div id="bienvenida"></div>
             </div>
           <div class="footer">
-            <a ng-repeat="banner in banner.bannerportada" ng-if="banner.estado == '1'" target="_blank" ng-href="{{banner.url}}" class="bannerImagen" style="background: url('http://inzone.com.mx/assets/images/imgclientes/{{banner.imagen}}') no-repeat;"></a>
+            <a ng-repeat="banner in banner.bannerportada" ng-if="banner.estado == '1'" target="_blank" ng-href="{{banner.url}}" class="bannerImagen" style="background: url('https://inzone.com.mx/assets/images/imgclientes/{{banner.imagen}}') no-repeat;"></a>
             <div class="botones">
               <ons-button class="boton_ruleta" onclick="window.location.href='registro/login.html'"><img src="img/acceder.png" alt=""><br> ACCEDER</ons-button>
               <ons-button class="boton_ruleta" onclick="window.location.href='ruleta.html'"><img src="img/ruleta.png" alt=""><br> RULETA</ons-button>
@@ -341,7 +341,7 @@
                 </ons-tabbar>
                 <p>&nbsp;</p>
                 <ons-list>
-                  <ons-list-item ng-click="tomarCategoria(post.id); menu.setMainPage('porCategoria.html', {closeMenu: true})" class="categoriaImagen" ng-repeat="post in posts.clientes_categorias" style="background: url('http://inzone.com.mx/assets/images/imgclientes/imagenescategorias/{{post.Imagen}}') no-repeat;"><span>{{post.nombre}}</span>
+                  <ons-list-item ng-click="tomarCategoria(post.id); menu.setMainPage('porCategoria.html', {closeMenu: true})" class="categoriaImagen" ng-repeat="post in posts.clientes_categorias" style="background: url('https://inzone.com.mx/assets/images/imgclientes/imagenescategorias/{{post.Imagen}}') no-repeat;"><span>{{post.nombre}}</span>
                     <img ng-if="post.ruleta == '1'" class="icono_ruleta" src="img/ruleta.png">
                   </ons-list-item>
                 </ons-list>
@@ -369,7 +369,7 @@
                   <div class="section group">
                     <div class="col span_1_of_2" ng-repeat="usuarioA in pagcupon.cupon_usuario" id="cuponID-{{usuarioA.id}}">
                     <span class="texto_cupon" ng-repeat="cupon in bdcupon.cupones|filter:{id_cupon : usuarioA.id_cupon}">
-                      <img ng-src="http://inzone.com.mx/assets/images/cupones/{{cupon.imagen}}" alt="{{cupon.texto}}">
+                      <img src="https://inzone.com.mx/assets/images/cupones/{{cupon.imagen}}" alt="{{cupon.texto}}">
                       <p>{{cupon.texto}}</p>
                       <ons-button class="boton_folio" ng-click="getRandom(usuarioA.id);">CANJEAR</ons-button>
                       <i><b>Vigencia:</b> {{cupon.vigencia}}</i></span>
@@ -420,7 +420,7 @@
                 <p>&nbsp;</p>
                 <div class="content-2">
                   <div class="cliente" ng-repeat="cliente in porlogo.clientes | orderBy: distancia:reverse" ng-click="tomarelemento(cliente.id); menu.setMainPage('detalle_logo.html', {closeMenu: true})" ng-if="cliente.estado == '1' && cliente.id_categoria && cliente.img_logo"><p class="corner-ribbon"><i class="fa fa-location-arrow" aria-hidden="true"></i> {{distancia(cliente) | number:1}} Km</p>
-                    <img ng-src="http://inzone.com.mx/assets/images/imgclientes/{{cliente.img_logo}}">
+                    <img ng-src="https://inzone.com.mx/assets/images/imgclientes/{{cliente.img_logo}}">
                     <p class="giro">{{cliente.Descripcion_Corta}}</p>
                   </div>
                 </div>
@@ -456,7 +456,7 @@
                   <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="cliente in porlogo.clientes | orderBy: distancia:reverse | filter: searchKeyword" ng-click="tomarelemento(cliente.id); menu.setMainPage('detalle_nombre.html', {closeMenu: true})" ng-if="cliente.estado == '1' && cliente.id_categoria && cliente.img_logo">
                     <ons-row>
                       <ons-col width="95px">
-                        <img class="thumbnail" ng-src="http://inzone.com.mx/assets/images/imgclientes/{{cliente.img_logo}}">
+                        <img class="thumbnail" ng-src="https://inzone.com.mx/assets/images/imgclientes/{{cliente.img_logo}}">
                       </ons-col>
                       <ons-col>
                         <div class="name">
@@ -495,16 +495,16 @@
                 <p>&nbsp;</p>
                 <div ng-if="imagencategorias.ruleta == '1'" class="ruleta_categoria" href="ruleta.html"><a href="ruleta.html">Entra a la ruleta <img  class="icono_ruleta1" src="img/ruleta.png"></a>                   
                 </div>
-                <div class="categoriaImagen cabecera" style="background: url(http://inzone.com.mx/assets/images/imgclientes/imagenescategorias/{{imagencategorias.Imagen}});">
+                <div class="categoriaImagen cabecera" style="background: url(https://inzone.com.mx/assets/images/imgclientes/imagenescategorias/{{imagencategorias.Imagen}});">
 
                     <div class="nombre_categoria timeline-name">{{imagencategorias.nombre}}</div>
                 </div>
                 <ons-list class="timeline" modifier="inset">
-                  <ons-list-item ng-click="tomarelemento(post.id); menu.setMainPage('detalle_categorias.html', {closeMenu: true})" class="timeline-li" modifier="tappable" ng-repeat="post in sucursalinfo.clientes | orderBy: distanciaPC:reverse" ng-if="post.estado == '1'" style="background: url(http://inzone.com.mx/assets/images/imgclientes/fondo/{{post.img_movil}});">
+                  <ons-list-item ng-click="tomarelemento(post.id); menu.setMainPage('detalle_categorias.html', {closeMenu: true})" class="timeline-li" modifier="tappable" ng-repeat="post in sucursalinfo.clientes | orderBy: distanciaPC:reverse" ng-if="post.estado == '1'" style="background: url(https://inzone.com.mx/assets/images/imgclientes/fondo/{{post.img_movil}});">
                     <ons-row>
                       <ons-col>
                       <div ng-if="post.img_logo">
-                        <img ng-src="http://inzone.com.mx/assets/images/imgclientes/{{post.img_logo}}" class="timeline-image">
+                        <img ng-src="https://inzone.com.mx/assets/images/imgclientes/{{post.img_logo}}" class="timeline-image">
                       </div>
                         <div class="timeline-date">{{distanciaPC(post) | number:1}} Km</div>
                         <div class="timeline-message"><p>Tel: {{post.telefono | tel}}</p></div>
@@ -533,15 +533,15 @@
                 </div>
                 </ons-toolbar>
                 <div class="card" 
-                     style="background-image: url(http://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_movil}});">
-                    <!-- <div class="logotipo"><img ng-src="http://inzone.com.mx/assets/images/imgclientes/{{sucursalinfo.img_logo}}"></div>
+                     style="background-image: url(https://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_movil}});">
+                    <!-- <div class="logotipo"><img ng-src="https://inzone.com.mx/assets/images/imgclientes/{{sucursalinfo.img_logo}}"></div>
                     <div class="card-name">{{sucursalinfo.nombre}}</div> -->
                     <div class='slider'>
                       <input name="input-slider" id='input-slide-autoplay' type="radio" class='input-slide' checked>
                       <ul>
-                        <li class='slide-0'><img src="http://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider1}}" alt=""></li>
-                        <li class='slide-1'><img src="http://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider2}}" alt=""></li>
-                        <li class='slide-2'><img src="http://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider3}}" alt=""></li>    
+                        <li class='slide-0'><img ng-src="https://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider1}}" alt=""></li>
+                        <li class='slide-1'><img ng-src="https://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider2}}" alt=""></li>
+                        <li class='slide-2'><img ng-src="https://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider3}}" alt=""></li>    
                       </ul>            
                     </div>
                     <div class="tipo_comida">{{distancia}} Km</div>
@@ -629,15 +629,15 @@
                 </div>
                 </ons-toolbar>
                 <div class="card" 
-                     style="background-image: url(http://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_movil}});">
-                    <!-- <div class="logotipo"><img ng-src="http://inzone.com.mx/assets/images/imgclientes/{{sucursalinfo.img_logo}}"></div>
+                     style="background-image: url(https://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_movil}});">
+                    <!-- <div class="logotipo"><img ng-src="https://inzone.com.mx/assets/images/imgclientes/{{sucursalinfo.img_logo}}"></div>
                     <div class="card-name">{{sucursalinfo.nombre}}</div> -->
                     <div class='slider'>
                       <input name="input-slider" id='input-slide-autoplay' type="radio" class='input-slide' checked>
                       <ul>
-                        <li class='slide-0'><img src="http://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider1}}" alt=""></li>
-                        <li class='slide-1'><img src="http://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider2}}" alt=""></li>
-                        <li class='slide-2'><img src="http://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider3}}" alt=""></li>    
+                        <li class='slide-0'><img src="https://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider1}}" alt=""></li>
+                        <li class='slide-1'><img src="https://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider2}}" alt=""></li>
+                        <li class='slide-2'><img src="https://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider3}}" alt=""></li>    
                       </ul>            
                     </div>
                     <div class="tipo_comida">{{distancia}} Km</div>
@@ -722,15 +722,15 @@
                 </div>
                 </ons-toolbar>
                 <div class="card" 
-                     style="background-image: url(http://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_movil}});">
-                    <!-- <div class="logotipo"><img ng-src="http://inzone.com.mx/assets/images/imgclientes/{{sucursalinfo.img_logo}}"></div>
+                     style="background-image: url(https://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_movil}});">
+                    <!-- <div class="logotipo"><img ng-src="https://inzone.com.mx/assets/images/imgclientes/{{sucursalinfo.img_logo}}"></div>
                     <div class="card-name">{{sucursalinfo.nombre}}</div> -->
                     <div class='slider'>
                       <input name="input-slider" id='input-slide-autoplay' type="radio" class='input-slide' checked>
                       <ul>
-                        <li class='slide-0'><img src="http://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider1}}" alt=""></li>
-                        <li class='slide-1'><img src="http://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider2}}" alt=""></li>
-                        <li class='slide-2'><img src="http://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider3}}" alt=""></li>    
+                        <li class='slide-0'><img src="https://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider1}}" alt=""></li>
+                        <li class='slide-1'><img src="https://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider2}}" alt=""></li>
+                        <li class='slide-2'><img src="https://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_app_slider3}}" alt=""></li>    
                       </ul>            
                     </div>
                     <div class="tipo_comida">{{distancia}} Km</div>
@@ -817,8 +817,8 @@
                 </div>
                 </ons-toolbar>
                 <div class="card" 
-                     style="background-image: url(http://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_movil}});">
-                    <!-- <div class="logotipo"><img ng-src="http://inzone.com.mx/assets/images/imgclientes/{{sucursalinfo.img_logo}}"></div>
+                     style="background-image: url(https://inzone.com.mx/assets/images/imgclientes/fondo/{{sucursalinfo.img_movil}});">
+                    <!-- <div class="logotipo"><img ng-src="https://inzone.com.mx/assets/images/imgclientes/{{sucursalinfo.img_logo}}"></div>
                     <div class="card-name">{{sucursalinfo.nombre}}</div> -->
                     <div class="tipo_comida">{{distancia}} Km</div>
                     <!-- <div class="card-desc">{{sucursalinfo.twitter}}</div> -->
@@ -942,7 +942,7 @@
                 <ons-list-item modifier="chevron" onclick="menu.setMainPage('lista.html', {closeMenu: true})">
                   <ons-icon icon="fa-street-view"></ons-icon> Cerca de mí
                 </ons-list-item>
-                <!-- <ons-list-item modifier="chevron"><a target="_blank" href="http://inzone.com.mx/movil/contacto"><ons-icon icon="fa-comments"></ons-icon> Contacto</a> -->
+                <!-- <ons-list-item modifier="chevron"><a target="_blank" href="https://inzone.com.mx/movil/contacto"><ons-icon icon="fa-comments"></ons-icon> Contacto</a> -->
                 <!-- </ons-list-item> -->
                 <ons-list-item modifier="chevron" onclick="exitFromApp();"><i class="fa fa-share" aria-hidden="true"></i> Salir</ons-list-item>
             </ons-list>
@@ -974,7 +974,7 @@
               });
             }
           };
-          xhttp.open("GET", "http://inzone.com.mx/api.php/usuarios?filter=email,eq,"+UsuarioLogueado, true);
+          xhttp.open("GET", "https://inzone.com.mx/api.php/usuarios?filter=email,eq,"+UsuarioLogueado, true);
           xhttp.send();
           // Añadir 10 puntos diarios
           var d = new Date();
@@ -986,7 +986,7 @@
             var puntos2 = puntos1 + 10;
             $.ajax({
               method: "PUT",
-              url: "http://inzone.com.mx/api.php/usuarios/"+usuarioID,
+              url: "https://inzone.com.mx/api.php/usuarios/"+usuarioID,
               data: {puntos:puntos2}
             }).done(function( msg ) {
               localStorage.PuntosUsuario = puntos2;
@@ -994,6 +994,7 @@
           };
           if (localStorage.NombreUsuario) {
             document.getElementById("nombre_perfil").innerHTML = "Hola "+ localStorage.NombreUsuario;
+            document.getElementById("bienvenida").innerHTML = "Hola "+localStorage.NombreUsuario;
             document.getElementById("puntos_perfil").innerHTML = "Tienes: "+localStorage.PuntosUsuario;
           };
 

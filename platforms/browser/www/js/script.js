@@ -17,27 +17,27 @@ if (!localStorage.puntosiniciales){
     };
 
   var config = {
-    apiKey: "AIzaSyAe2wjpSIwXHJwuXQUMKGCqJwGlT3fyE60",
-    authDomain: "inzone-cef47.firebaseapp.com",
-    databaseURL: "https://inzone-cef47.firebaseio.com",
-    projectId: "inzone-cef47",
-    storageBucket: "inzone-cef47.appspot.com",
-    messagingSenderId: "686520181991",
-    appId: "1:686520181991:web:3a93163f3632b261"
+    apiKey: "AIzaSyCgIzFEhJoqir3pf89vaFDlzUk3iCRLk3k",
+    authDomain: "inzone-8f486.firebaseapp.com",
+    databaseURL: "https://inzone-8f486.firebaseio.com",
+    projectId: "inzone-8f486",
+    storageBucket: "inzone-8f486.appspot.com",
+    messagingSenderId: "348434125851",
+    appId: "1:348434125851:web:dc47b1971d453cf39954be"
   };
   firebase.initializeApp(config);
 
 if(localStorage.PuntosUsuario <= 0) {
   $.ajax({
     method: "PUT",
-    url: "http://inzone.com.mx/api.php/usuarios/"+usuarioID,
+    url: "https://inzone.com.mx/api.php/usuarios/"+usuarioID,
     data: {puntos:15}
   }).done(function( msg ) {});
 };
 var user = firebase.auth().currentUser;
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    // User is signed in.
+    
     user.providerData.forEach(function (profile) {
     // console.log("Sign-in provider: "+profile.providerId);
     // console.log("  Provider-specific UID: "+profile.uid);

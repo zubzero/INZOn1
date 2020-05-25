@@ -123,13 +123,13 @@ h1 {
 .fa-linkedin-square{color: #3d688c;}
 .fa-google-plus-square{color: #cc0e0e;}
 .fa-whatsapp{color: #05b703;}
-.botonesHome{
-  height: 390px;
-}
-.portada .page__content{
-  background: url('../img/fondo.jpg') center top no-repeat !important;
-  position: relative !important;
-  top: 0;
+/*.botonesHome{
+  height: 350px;
+}*/
+#bienvenida{color: #ff7200;
+text-shadow: #ffffff 2px 4px 1px}
+.portada .page__background{
+  background: url('../img/fondo.jpg') center bottom no-repeat !important;
   background-size: cover;
 }
 .logo{
@@ -137,6 +137,8 @@ h1 {
   max-height: 205px;
   height: 205px;
   width: 100%;
+  position: fixed;
+  top: 0;
 }
 .logo img{
   display: block;
@@ -147,6 +149,8 @@ h1 {
 .homeUno{
   text-align: center;
   min-height: 170px;
+  position: relative;
+  top: 170px;
 }
 .homeUno ons-button{width: 50%; float: left; border-radius: 0 !important; padding: 0 !important;border: none;}
 .imagenHome{background: url(../img/imgmapa.png) center top no-repeat; width: 100%; height: 155px; background-size: contain;}
@@ -486,7 +490,7 @@ ons-tabbar{
   width: 100%;
   background-size: cover;
 }
-.footer{width: 100%; height: auto; text-align: center; background: #0696B8;}
+.footer{width: 100%; height: auto; text-align: center; background: #0696B8; position: fixed;bottom: 0;}
 .footer .botones i{font-size: 25px; padding: 0; margin: 0; position: relative;top: 10px;}
 .footer .botones ons-button{color: #fff;width: 23%;font-size: 9px; border-radius: 0; padding: 0; background-color: transparent;}
 .boton_ruleta img{padding: 5px 0 0 0;position: relative;top: 13px; }
@@ -747,7 +751,7 @@ background: linear-gradient(180deg, rgba(37,37,37,1) 29%, rgba(66,66,66,1) 100%)
   font-weight: bold;
   color: #3C3C3C;
   font-size: 23px;
-  margin: 35px 0;
+  margin: 20px 0;
 }
 .tab-bar{
   background-color: #f8550b;

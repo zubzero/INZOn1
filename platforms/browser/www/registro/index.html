@@ -111,7 +111,7 @@
         localStorage.NacimientoUsuario = nacimiento;
           $.ajax({
             method: "POST",
-            url: "http://inzone.com.mx/api.php/usuarios",
+            url: "https://inzone.com.mx/api.php/usuarios",
             data: { nombre: nom, apellidos: ape, email: email, fecha_nacimiento: nacimiento, contrasena: contrasena, puntos: 100, puntos_registrarse: 100, activo: 1}
           })
           .done(function( msg ) {
@@ -249,7 +249,7 @@
                 <label class="active">
                     Fecha de nacimiento* <span class="req">*</span>
                 </label>
-                <input name="nacimiento" id="nacimiento" type="date" max="2001-10-31" required>
+                <input name="nacimiento" id="nacimiento" type="date" required>
             </div>
             <button style="display: none;" class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Acceder</button>
             &nbsp;&nbsp;&nbsp;

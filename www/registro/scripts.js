@@ -100,7 +100,7 @@ function enviarDatosRegistro(){
  //    ajax.send("nombre="+nom+"&apellido="+ape+"&web="+web)
     $.ajax({
       method: "POST",
-      url: "http://inzone.com.mx/api.php/usuarios",
+      url: "https://inzone.com.mx/api.php/usuarios",
       data: { nombre: nom, apellidos: ape, email: correo, fecha_nacimiento: nacimiento, contrasena: contrasena, puntos: 80, puntos_registrarse: 80, activo: 1}
     })
       .done(function( msg ) {

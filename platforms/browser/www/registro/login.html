@@ -111,7 +111,7 @@
         // localStorage.NacimientoUsuario = nacimiento;
           $.ajax({
             method: "POST",
-            url: "http://inzone.com.mx/api.php/usuarios",
+            url: "https://inzone.com.mx/api.php/usuarios",
             data: { nombre: nom, apellidos: ape, email: email, fecha_nacimiento: nacimiento, contrasena: contrasena, puntos: 80, puntos_registrarse: 80, activo: 1}
           })
           .done(function( msg ) {

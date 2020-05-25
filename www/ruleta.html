@@ -125,7 +125,7 @@
                 document.getElementById('puntos_usuario').textContent = puntos2;
                 $.ajax({
                     method: "PUT",
-                    url: "http://inzone.com.mx/api.php/usuarios/"+usuarioID,
+                    url: "https://inzone.com.mx/api.php/usuarios/"+usuarioID,
                     data: {puntos:puntos2}
                 }).done(function( msg ) {
                     localStorage.PuntosUsuario = puntos2;
@@ -153,7 +153,7 @@
                 // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
                 // swal("¡Felicidades!, " + winningSegment.text);
                 // Funcion para guardar los cupones
-            $.getJSON('http://inzone.com.mx/api.php/cupones?transform=1&filter=activo,eq,1&filter=total,sw,1&filter=total,bt,1,1000', function(data) {
+            $.getJSON('https://inzone.com.mx/api.php/cupones?transform=1&filter=activo,eq,1&filter=total,sw,1&filter=total,bt,1,1000', function(data) {
                 var myObj, i, x = "";
                 myObj = data;
                 countObjt = myObj.cupones.length;
@@ -180,7 +180,7 @@
                 // localStorage.setItem('datos', JSON.stringify(miObjeto));
                 swal({
                     title: "¡Ganaste!",
-                    html: "<img style='width:100%; height:auto;' src='http://inzone.com.mx/assets/images/cupones/" + localStorage.cuponImg + "''>" +
+                    html: "<img style='width:100%; height:auto;' src='https://inzone.com.mx/assets/images/cupones/" + localStorage.cuponImg + "''>" +
                         "<p class='cuponWin'>"+ localStorage.cuponTexto +" </p>" +
                         "<hr>" +
                         "<span><b>Vigencia:</b> "+ localStorage.cuponVig +"</span>",
@@ -221,7 +221,7 @@
                 var CuponGanado = localStorage.cuponId;
                 $.ajax({
                     method: "POST",
-                    url: "http://inzone.com.mx/api.php/cupon_usuario",
+                    url: "https://inzone.com.mx/api.php/cupon_usuario",
                     data: { id_cupon: CuponGanado, usuario: Idusuario}
                   })
                   .done(function( msg ) {
@@ -236,7 +236,7 @@
                 console.log(TotalC);
                 $.ajax({
                     method: "PUT",
-                    url: "http://inzone.com.mx/api.php/cupones/"+IdCupon,
+                    url: "https://inzone.com.mx/api.php/cupones/"+IdCupon,
                     data: {total: TotalC}
                   })
                   .done(function( msg ) {});
@@ -247,7 +247,7 @@
             //     var TotalC = localStorage.cuponTotal;
             //     $.ajax({
             //         method: "POST",
-            //         url: "http://inzone.com.mx/api.php/cupones/"+IdCupon,
+            //         url: "https://inzone.com.mx/api.php/cupones/"+IdCupon,
             //         data: { total: TotalC}
             //       })
             //       .done(function( msg ) {});
@@ -270,7 +270,7 @@
                 });
               }
             });
-            $.getJSON('http://inzone.com.mx/api.php/cupones?transform=1&filter=activo,eq,1', function(data) {
+            $.getJSON('https://inzone.com.mx/api.php/cupones?transform=1&filter=activo,eq,1', function(data) {
                 var rmt = data;
                 var checkCupon = rmt.cupones[0];
                 console.log(checkCupon);
