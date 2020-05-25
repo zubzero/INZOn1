@@ -15,6 +15,7 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+        document.addEventListener("backbutton", onBackKeyDown, false);
     },
 
     // Update DOM on a Received Event
@@ -29,5 +30,16 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-
+function exitFromApp(){
+    if (navigator.app) {
+        navigator.app.exitApp();
+    } else if (navigator.device) {
+        navigator.device.exitApp();
+    } else {
+        window.close();
+    }
+};
+function onBackKeyDown(){
+    window.history.back();
+};
 app.initialize();
