@@ -6,8 +6,8 @@ function onDeviceReady() {
 	document.addEventListener("backbutton", onBackKeyDown, false);
 }
 function onBackKeyDown() {
-    swal('Retornar');
-    return false;
+    // swal('Retornar');
+    // return false;
     $window.history.back();
 };
 // Si no tiene puntos que los ponga
