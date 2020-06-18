@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.inzone.com.mx" version="2.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.inzone.com.mx" version="2.0.51" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Inzone</name>
     <description>
         Red de negocios
@@ -63,14 +63,14 @@
     <preference name="loadUrlTimeoutValue" value="700000" />
     <preference name="SplashScreen" value="screen" />
     <preference name="android-build-tool" value="gradle" />
-    <preference name="phonegap-version" value="cli-8.0.0" />
+    <preference name="phonegap-version" value="cli-9.0.0" />
     <splash src="www/res/screen/android/screen-ldpi-portrait.png" />
     <plugin name="cordova-plugin-geolocation" spec="2.4.3">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="" />
     </plugin>
     <plugin name="cordova-plugin-googlemaps" spec="2.5.0">
-        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyAlFoalCCJDTtxgxmZkKn6RZ0duAgqg3EA" />
-        <variable name="API_KEY_FOR_IOS" value="AIzaSyAeOZQDoS_TvBJj1cDIXJ_ocRStPrupVMg" />
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyAlCPWO0OKSUc-4MKUgEaGZGewt78WlMm8" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyCDJQ25Bo0xh-uBWIQlrx3JHLlrsUI-C-k" />
         <variable name="PLAY_SERVICES_VERSION" value="15.0.1" />
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.1.1" />
     </plugin>
