@@ -297,9 +297,20 @@
       </div>
     </div>
     <ons-sliding-menu main-page="page1.html" menu-page="menu.html" swipeable="true" side="left" max-slide-distance="250px" var="menu"></ons-sliding-menu>
+    <ons-tabbar swipeable position="bottom" ons-prechange="updateTitle($event)">
+        <ons-tab onclick="window.location.href='registro/login.html'" active><img src="img/acceder.png" alt="">
+        </ons-tab>
+        <ons-tab onclick="window.location.href='ruleta.html'"><img src="img/ruleta.png" alt="">
+        </ons-tab>
+        <ons-tab onclick="menu.setMainPage('cupones.html', {closeMenu: true})"><img src="img/cupones.png" alt="">
+        </ons-tab>
+        <ons-tab onclick="exitFromApp();"><img src="img/salir.png" alt="">
+        </ons-tab>
+      </ons-tabbar>
+    </ons-page>
         <ons-template id="page1.html">
           <ons-page ng-controller="homeCtl" class="portada">
-            <div class="center logo"><img ng-src="img/logo1.png"></div>
+            <div class="center logo"><img ng-src="img/logo.png"></div>
             <div class="homeUno">
               <div class="tituloHome"><p>BUSCA NEGOCIO POR:</p></div>
               <div class="botonesHome">
@@ -312,14 +323,12 @@
             </div>
           <div class="footer">
             <a ng-repeat="banner in banner.bannerportada" ng-if="banner.estado == '1'" target="_blank" ng-href="{{banner.url}}" class="bannerImagen" style="background: url('https://inzone.com.mx/assets/images/imgclientes/{{banner.imagen}}') no-repeat;"></a>
-            <div class="botones">
+            <div class="botones" style="display: none">
               <ons-button class="boton_ruleta" onclick="window.location.href='registro/login.html'"><img src="img/acceder.png" alt=""><br> ACCEDER</ons-button>
               <ons-button class="boton_ruleta" onclick="window.location.href='ruleta.html'"><img src="img/ruleta.png" alt=""><br> RULETA</ons-button>
               <ons-button class="boton_ruleta" onclick="menu.setMainPage('cupones.html', {closeMenu: true})"><img src="img/cupones.png" alt=""><br> MIS CUPONES</ons-button>
               <ons-button class="boton_ruleta" onclick="exitFromApp();"><img src="img/salir.png" alt=""><br> SALIR</ons-button>
             </div>
-            
-            <div class="copy"><p>INZONE &copy; 2020 | Versión: {{version}}</p></div>
           </div>
           </ons-page>
         </ons-template>
@@ -333,7 +342,7 @@
                     </div>
                     <div class="center">CATEGORÍAS</div>
                     <div class="right">
-                        <img class="logo_head" onclick="menu.setMainPage('page1.html', {closeMenu: true})" ng-src="img/logo_chico.png">
+                      <i class="fa fa-home home_icon" aria-hidden="true"></i>
                     </div>
                 </ons-toolbar>
                 <ons-tabbar position="top">
@@ -368,10 +377,10 @@
                 <p>&nbsp;</p>
                 <div class="content">
                   <div class="section group">
-                    <div class="col span_1_of_2" ng-repeat="usuarioA in pagcupon.cupon_usuario" id="cuponID-{{usuarioA.id}}">
+                    <div class="col span_1_of_2 cupon_c" ng-repeat="usuarioA in pagcupon.cupon_usuario" id="cuponID-{{usuarioA.id}}">
                     <span class="texto_cupon" ng-repeat="cupon in bdcupon.cupones|filter:{id_cupon : usuarioA.id_cupon}">
                       <img src="https://inzone.com.mx/assets/images/cupones/{{cupon.imagen}}" alt="{{cupon.texto}}">
-                      <p>{{cupon.texto}}</p>
+                      <!-- <p>{{cupon.texto}}</p> -->
                       <ons-button class="boton_folio" ng-click="getRandom(usuarioA.id);">CANJEAR</ons-button>
                       <i><b>Vigencia:</b> {{cupon.vigencia}}</i></span>
                     </div>

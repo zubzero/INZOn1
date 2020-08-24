@@ -8,8 +8,13 @@
 }
 
 body {
-  background: url(../ruleta/506920898.jpg) no-repeat center bottom;
+  /*background: url(../ruleta/506920898.jpg) no-repeat center bottom;*/
   font-family: "Arial", Verdana;
+  background: rgb(37,51,75);
+    background: -moz-linear-gradient(0deg, rgba(37,51,75,1) 0%, rgba(22,100,135,1) 50%, rgba(37,51,75,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(37,51,75,1) 0%, rgba(22,100,135,1) 50%, rgba(37,51,75,1) 100%);
+    background: linear-gradient(0deg, rgba(37,51,75,1) 0%, rgba(22,100,135,1) 50%, rgba(37,51,75,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#25334b",endColorstr="#25334b",GradientType=1);
   height: auto;
   position: relative;
   width: 100%;

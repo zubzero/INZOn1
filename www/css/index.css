@@ -126,14 +126,16 @@ h1 {
 /*.botonesHome{
   height: 350px;
 }*/
-#bienvenida{color: #ff7200;
-text-shadow: #ffffff 2px 4px 1px}
+#bienvenida{
+color: #ffffff;
+    text-shadow: #000000 2px 3px 1px;
+    }
 .portada .page__background{
-  background: url('../img/fondo.jpg') center bottom no-repeat !important;
+  background: url(../img/fondo_n.jpg) #195675 center center no-repeat !important;
   background-size: cover;
 }
 .logo{
-  background: url('../img/cabecera.png') no-repeat top center;
+  /*background: url('../img/cabecera.png') no-repeat top center;*/
   max-height: 205px;
   height: 205px;
   width: 100%;
@@ -184,23 +186,36 @@ text-shadow: #ffffff 2px 4px 1px}
   color: #fff;
     padding: 7px 10px;
 }
+.home_icon{
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #fff;
+  font-size: 30px;
+}
 .homeUno h4{padding: 0 0 10px 0;margin: 0;font-weight: bold !important;}
 .flecha{position: relative;top: -9px;max-width: 375px;height: 30px;margin: 0 auto;background: url(../img/flecha.png) center center no-repeat;}
 .logo_head{margin:0 10px;}
 ons-tabbar{
         width: 100%;
     height: 65px;
+    top: unset;
+}
+.tab-bar__item{
+  height: 60px;
 }
 .categoriaImagen{
-    height: 140px;
-    display: block;
-    position: relative;
-    text-align: center;
-    z-index: 999;
-    background-size: cover !important;
-    -webkit-box-shadow: inset 0px -48px 99px 0 rgb(0, 0, 0);
-  -moz-box-shadow: inset 0px -48px 99px 0 rgba(0,0,0);
-  box-shadow: inset 0px -48px 99px 0 rgb(0, 0, 0);
+  height: 140px;
+  display: block;
+  position: relative;
+  text-align: center;
+  border-radius: 65px;
+  margin: 15px 10px;
+  z-index: 999;
+  background-size: cover !important;
+  -webkit-box-shadow: inset 0px -48px 99px 0 rgb(0 16 28);
+  -moz-box-shadow: inset 0px -48px 99px 0 rgb(0 16 28);
+  box-shadow: inset 0px -48px 99px 0 rgb(0 16 28);
 }
 .bannerImagen{
     height: 100px;
@@ -215,7 +230,21 @@ ons-tabbar{
   box-shadow: inset 0px 50px 99px 0 rgb(4, 54, 58);}
 .nombre_categoria{top: 36px; position: relative;font-size: 22px !important;}
 .categoriaImagen img{width: 100%; height: 140px;}
-.categoriaImagen span{position: absolute; bottom: 0; text-transform: uppercase; left: 20px;color: #fff; font-weight: bold; text-shadow: 2px 2px 1px rgba(0, 0, 0, 1); font-size: 1.1em;}
+.categoriaImagen span{
+  position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+    font-size: 1.2em;
+}
 .timeline {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -429,12 +458,11 @@ ons-tabbar{
   margin-bottom: 10px;
 }
 .fa-angle-left, .fa-chevron-left{
-      padding: 8px 10px 7px 8px;
+    padding: 10px 10px 7px 2px;
     color: #fff;
     font-size: 24px !important;
     width: 19px !important;
     background: #f74e0fc7;
-    text-shadow: 3px 2px 2px #000 !important;
     font-weight: bolder;
 }
 .timeline-date {
@@ -490,7 +518,7 @@ ons-tabbar{
   width: 100%;
   background-size: cover;
 }
-.footer{width: 100%; height: auto; text-align: center; background: #0696B8; position: fixed;bottom: 0;}
+.footer{width: 100%; height: auto; text-align: center; background: #0696B8; position: fixed;bottom: 60px;}
 .footer .botones i{font-size: 25px; padding: 0; margin: 0; position: relative;top: 10px;}
 .footer .botones ons-button{color: #fff;width: 23%;font-size: 9px; border-radius: 0; padding: 0; background-color: transparent;}
 .boton_ruleta img{padding: 5px 0 0 0;position: relative;top: 13px; }
@@ -510,9 +538,8 @@ ons-tabbar{
 .lista-menu{background: #2f2f2f;}
 .lista-menu ons-list-item{color: #fff;}
 .onsen-sliding-menu__menu .page__content{background: #3c3c3c !important;}
-.por_logo .page__background{background: #eaeaea !important;}
 .content-2{width: 90%; margin: 20px auto 0 auto;}
-.content-2 .cliente{width: 46%;height: auto;position: relative;background: #fff;text-align: center; padding: 24px 0 0;float: left;margin-bottom: 15px;border: 1px solid #d6d6d6;}
+.content-2 .cliente{width: 47%;height: auto;position: relative;background: #fff;text-align: center; padding: 24px 0 0;float: left;margin-bottom: 15px;}
 .cliente img{width: 100%; height: auto;}
 .content-2 .cliente:nth-child(odd){margin-right: 15px;}
 .enjoy-css {
@@ -677,10 +704,33 @@ background: linear-gradient(180deg, rgba(37,37,37,1) 29%, rgba(66,66,66,1) 100%)
 .cupon_page .col {
   display: block;
   float:left;
-  margin: 1% 0 1% 1.6%;
+}
+.cupon_c{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.texto_cupon img{
   background: white;
-  padding: 15px;
-  border-radius: 5px;
+  padding: 11px;
+  max-width: 90%;
+}
+.cupon_page .button{
+  background: #EE721B;
+  color: yellow;
+  font-weight: 700;
+  border-radius: 20px;
+  width: 130px;
+  margin: 20px;
+}
+.texto_cupon i{
+  color: #fff;
+}
+.cupon_page .page__background, .por_logo .page__background{
+  background: rgb(37,51,75);
+  background: -moz-linear-gradient(0deg, rgba(37,51,75,1) 0%, rgba(22,100,135,1) 50%, rgba(37,51,75,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(37,51,75,1) 0%, rgba(22,100,135,1) 50%, rgba(37,51,75,1) 100%);
+  background: linear-gradient(0deg, rgba(37,51,75,1) 0%, rgba(22,100,135,1) 50%, rgba(37,51,75,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#25334b",endColorstr="#25334b",GradientType=1);
 }
 .cupon_page .col:first-child { margin-left: 0; }
 
@@ -691,9 +741,7 @@ background: linear-gradient(180deg, rgba(37,37,37,1) 29%, rgba(66,66,66,1) 100%)
 .cupon_page .group { zoom:1; /* For IE 6/7 */ }
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
 @media only screen and (max-width: 480px) {
-  .cupon_page .col { 
-    margin: 1% 0 1% 0%;
-  }
+
 }
 @media only screen and (max-width: 480px) {
   .cupon_page .span_2_of_2, .cupon_page .span_1_of_2 { width: 100%; }
@@ -760,7 +808,12 @@ background: linear-gradient(180deg, rgba(37,37,37,1) 29%, rgba(66,66,66,1) 100%)
 .navigation-bar{
   background: #f8550b;
 }
-.tab-bar__button, .navigation-bar__center, .navigation-bar__title{color: #fff;}
+.tab-bar__button, .navigation-bar__center, .navigation-bar__title{
+  color: #fff; 
+  font-weight: bold;
+  position: relative;
+  top: 12px;
+}
 
 /* Slideshow container */
 .slideshow-container {
