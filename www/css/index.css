@@ -150,7 +150,7 @@ color: #ffffff;
 }*/
 .homeUno{
   text-align: center;
-  min-height: 170px;
+  min-height: 480px;
   position: relative;
   top: 120px;
 }
@@ -449,8 +449,8 @@ ons-tabbar{
 }
 #cercademi{position: relative; top:-6px; list-style:none; list-style-type: none;-webkit-margin-before: 0;-webkit-margin-after: 0;-webkit-margin-start: 0;-webkit-margin-end: 0;-webkit-padding-start: 0;}
 .timeline-image {
-  width: 109px;
-  height: 40px;
+  width: 85px;
+  height: 30px;
   background: #fff;
   border-radius: 4px;
   padding: 7px;
