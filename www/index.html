@@ -504,6 +504,7 @@
                     <ons-tab ng-click="menu.setMainPage('lista.html', {closeMenu: true}, {animation:'slide'})" label="Cerca de mí" icon="fa-street-view"></ons-tab>
                 </ons-tabbar>
                 <p>&nbsp;</p>
+                <p>&nbsp;</p>
                 <div ng-if="imagencategorias.ruleta == '1'" class="ruleta_categoria" href="ruleta.html"><a href="ruleta.html">Entra a la ruleta <img  class="icono_ruleta1" src="img/ruleta.png"></a>                   
                 </div>
                 <div class="categoriaImagen cabecera" style="background: url(https://inzone.com.mx/assets/images/imgclientes/imagenescategorias/{{imagencategorias.Imagen}});">
@@ -520,7 +521,7 @@
                         <div class="timeline-date">{{distanciaPC(post) | number:1}} Km</div>
                         <div class="timeline-message"><p>Tel: {{post.telefono | tel}}</p></div>
                         <div class="timeline-from">
-                          <p class="timeline-name">{{post.direccion}}</p>
+                          <p class="timeline-name" style="display: none;">{{post.direccion}}</p>
                           <span class="timeline-id">{{post.Descripcion_Corta}}</span>
                         </div>
                         
